@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "hello",
+    "heroku_connect
 ]
 
 MIDDLEWARE = [
@@ -75,24 +78,13 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-'''
+
 DATABASES = {
-    "default": {
-        "ENGINE" : "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+    "default": {dj_database_url.config(
+        engine='heroku_connect.db.backends.postgresql')
     }
 }
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd676an9rvgsvr6',
-        'USER': 'tzgtszqowqbeyo',
-        'PASSWORD': '586035937444c59190c595f740d92824a2a5430d959386b79866d7b623c52c7b',
-        'HOST': 'ec2-54-172-173-58.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
