@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "hello",
-    "heroku_connect
+    "heroku_connect"
 ]
 
 MIDDLEWARE = [
