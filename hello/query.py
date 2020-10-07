@@ -18,14 +18,14 @@ def create_connection(db_name, db_user, db_password, db_host, db_port):
         print(f"The error '{e}' occurred")
     return connection
     
-    connection = create_connection(
+connection = create_connection(
     'd676an9rvgsvr6', 
     'tzgtszqowqbeyo', 
     '586035937444c59190c595f740d92824a2a5430d959386b79866d7b623c52c7b', 
     'ec2-54-172-173-58.compute-1.amazonaws.com', 
     '5432')
     
-    def execute_read_query(connection, query):
+def execute_read_query(connection, query):
     cursor = connection.cursor()
     result = None
     try:
