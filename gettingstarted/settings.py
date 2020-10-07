@@ -80,9 +80,8 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default' : { dj_database_url.config(
-    engine='heroku_connect.db.backends.postgresql'
-)},
+    'default' : { "ENGINE" : dj_database_url.config('heroku_connect.db.backends.postgresql')
+                },
      'sqlite' : {"ENGINE" : "django.db.backends.sqlite3",
         "NAME": os.path.join(BASE_DIR, "db.sqlite3")
                 }
