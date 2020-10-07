@@ -12,7 +12,10 @@
     <p>This is a sample Python application deployed to Heroku.</p>
     <a type="button" class="btn btn-lg btn-default" href="https://open.spotify.com/playlist/0D7we4jUPrpzATRO5ggPHS"><span class="glyphicon glyphicon-music"></span> Songs</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/carsonmclarson/python-demo-app"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-    <input class="btn btn-lg btn-primary" type="button" value="-------">
+    <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}" >
+        <input class="form-control mr-sm-2" type="search" name="search"> 
+        <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit"> Search </button>
+    </form>
   </div>
 </div>
 <div class="container">
