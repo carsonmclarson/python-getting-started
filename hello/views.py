@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic.list import ListView
+from django.views.generic import TemplateView, ListView
 
 from .models import Greeting, User
 
