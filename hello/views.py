@@ -21,7 +21,7 @@ def db(request):
 
 class SearchView(ListView):
     model = User
-    template_name = 'index.html'
+    template_name = 'search.html'
     context_object_name = 'all_search_results'
 
     def get_queryset(self):
