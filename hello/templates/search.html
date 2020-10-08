@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% for result in all_search_results %}
+        <h3>{{result.Username}}</h3>
+        <p>{{result.Email}}</p>
+        
+    {% empty %}
+        <h2>No results found</h2>
+    {% endfor %}
+{% endblock %}
