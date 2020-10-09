@@ -21,7 +21,7 @@ def db(request):
 
     return render(request, "db.html", {"greetings": greetings})
 
-class SearchResultsView(ListView):
+'''class SearchResultsView(ListView):
     model = User
     template_name = 'search.html'
     
@@ -30,6 +30,20 @@ class SearchResultsView(ListView):
         object_list = User.objects.filter(
             Q(username__icontains=query) | Q(email__icontains=query)
         )
-        return object_list
+        return object_list'''
+   
+class SearchResultView(ListView):
+    model = User
+    template_name = 'search.html'
+    context_object_name = 'object_list'
 
+    def get_queryset(self):
+       result = super(SearchResultView, self).get_queryset()
+       query = self.request.GET.get('search')
+       if query:
+          postresult = User.objects.filter(title__contains=query)
+          result = postresult
+       else:
+           result = None
+       return result
 
