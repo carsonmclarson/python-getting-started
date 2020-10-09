@@ -32,7 +32,7 @@ def db(request):
         )
         return object_list'''
    
-class SearchResultView(ListView):
+class SearchResultsView(ListView):
     model = User
     template_name = 'search.html'
     context_object_name = 'object_list'
