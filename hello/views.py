@@ -21,7 +21,7 @@ def db(request):
 
     return render(request, "db.html", {"greetings": greetings})
 
-class SearchView(ListView):
+class SearchResultsView(ListView):
     model = User
     template_name = 'search.html'
     
