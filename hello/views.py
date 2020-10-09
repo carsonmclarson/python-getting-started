@@ -5,10 +5,12 @@ from django.views.generic import TemplateView, ListView
 from .models import Greeting, User
 
 # Create your views here.
-def index(request):
+'''def index(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, "index.html")
+    return render(request, "index.html")'''
 
+class HomePageView(TemplateView):
+    template_name = 'index.html'
 
 def db(request):
 
