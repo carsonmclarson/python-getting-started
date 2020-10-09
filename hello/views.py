@@ -22,14 +22,12 @@ def db(request):
 class SearchView(ListView):
     model = User
     template_name = 'search.html'
-    context_object_name = 'all_search_results'
+    
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = User.objects.filter(
+            Q(username__icontains=query) | Q(email__icontains=query)
+        )
+        return object_list
 
-    def get_queryset(self):
-       result = super(SearchView, self).get_queryset()
-       query = self.request.GET.get('search')
-       if query:
-          postresult = User.objects.filter(title__contains=query)
-          result = postresult
-       else:
-           result = None
-       return result
+
