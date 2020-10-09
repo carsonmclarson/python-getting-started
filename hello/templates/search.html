@@ -1,11 +1,10 @@
-{% extends "index.html" %}
 
-{% block content %}
-    {% for result in all_search_results %}
-        <h3>{{result.Username}}</h3>
-        <p>{{result.Email}}</p>
-        
-    {% empty %}
-        <h2>No results found</h2>
-    {% endfor %}
-{% endblock %}
+<h1>Search Results</h1>
+
+<ul>
+  {% for user in object_list %}
+    <li>
+      {{ user.Username }}, {{ user.Email }}
+    </li>
+  {% endfor %}
+</ul>
