@@ -12,9 +12,8 @@
     <p>This is a sample Python application deployed to Heroku.</p>
     <a type="button" class="btn btn-lg btn-default" href="https://open.spotify.com/playlist/0D7we4jUPrpzATRO5ggPHS"><span class="glyphicon glyphicon-music"></span> Songs</a>
     <a type="button" class="btn btn-lg btn-primary" href="https://github.com/carsonmclarson/python-demo-app"><span class="glyphicon glyphicon-download"></span> Source on GitHub</a>
-    <form class="form-inline" method="GET" action="{% url 'search' %}" >
-        <input class="form-control" type="search" name="search"> 
-        <button class="btn btn btn-outline-info" type="submit"> Search </button>
+    <form action="{% url 'search_results' %}" method="get">
+      <input name="q" type="text" placeholder="Search...">
     </form>
   </div>
 </div>
