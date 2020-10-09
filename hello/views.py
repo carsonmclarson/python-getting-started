@@ -38,7 +38,7 @@ class SearchResultsView(ListView):
     context_object_name = 'object_list'
 
     def get_queryset(self):
-       result = super(SearchResultView, self).get_queryset()
+       result = super(SearchResultsView, self).get_queryset()
        query = self.request.GET.get('search')
        if query:
           postresult = User.objects.filter(title__contains=query)
